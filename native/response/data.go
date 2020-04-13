@@ -2,8 +2,11 @@ package response
 
 import "github.com/bsm/openrtb"
 
+type DataTypeID int
+
 type Data struct {
-	Label string            `json:"label,omitempty"` // The optional formatted string name of the data type to be displayed
-	Value string            `json:"value"`           // The formatted string of data to be displayed. Can contain a formatted value such as “5 stars” or “$10” or “3.4 stars out of 5”
-	Ext   openrtb.Extension `json:"ext,omitempty"`
+	Label  string            `json:"label,omitempty"` // The optional formatted string name of the data type to be displayed
+	Value  string            `json:"value"`           // The formatted string of data to be displayed. Can contain a formatted value such as “5 stars” or “$10” or “3.4 stars out of 5”
+	TypeID DataTypeID        `json:"type,omitempty"`  // Type ID of the element supported by the publisher
+	Ext    openrtb.Extension `json:"ext,omitempty"`
 }
