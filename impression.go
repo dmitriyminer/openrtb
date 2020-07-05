@@ -16,7 +16,7 @@ var (
 // The presence of Banner, Video, and/or Native objects
 // subordinate to the Imp object indicates the type of impression being offered.
 type Impression struct {
-	ID                string         `json:"id"` // A unique identifier for this impression
+	ID                StringOrNumber `json:"id"` // A unique identifier for this impression
 	Banner            *Banner        `json:"banner,omitempty"`
 	Video             *Video         `json:"video,omitempty"`
 	Audio             *Audio         `json:"audio,omitempty"`
